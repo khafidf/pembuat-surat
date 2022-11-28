@@ -1,9 +1,12 @@
-const express = require("express");
-const LetterModel = require("../models/lettermodel.js");
+const LetterModel = require("../models/letterModel.js");
 
 const getLetter = async (req, res) => {
-  const datas = await LetterModel.find();
-  res.status(200).json(datas);
+  try {
+    const letter = await LetterModel.find();
+    res.status(200).json(letter);
+  } catch (error) {
+    res.status(404).json(console.log(error.message));
+  }
 };
 
 module.exports = { getLetter };

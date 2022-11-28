@@ -6,7 +6,7 @@ const app = express();
 
 require("./dbconfig.js");
 
-const LetterView = require("./routes/letterview.js");
+const LetterView = require("./routes/letterRoute.js");
 
 app.use(cors());
 app.use(express.json());
